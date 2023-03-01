@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <!-- ESSENTIALLY THE NAVBAR -->
     <header>
         <div class="bg-dark text-white p-2">
             <span class="navbar-brand ml-2">Book Store</span>
@@ -17,11 +18,15 @@
             <div id="categories" class="col-3">
                 This is the really cool Mission 09 Bookstore
             </div>
+
+            <!-- THIS IS WHERE THE BODY AND BOOKS GO-->
             <div class="col-9">
                 @RenderBody()
             </div>
         </div>
     </header>
+
+<!-- FOOTER -->
     <center>
         <footer>Mission 09 &copy; 413 IS AWESOME</footer>
     </center>

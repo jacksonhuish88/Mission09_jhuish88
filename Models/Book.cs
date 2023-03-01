@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 // #nullable disable
 
 namespace Mission09_jhuish88.Models
-{
+{   // BOOK CLASS FOR DATABASE
     public partial class Book
     {
         [Key]

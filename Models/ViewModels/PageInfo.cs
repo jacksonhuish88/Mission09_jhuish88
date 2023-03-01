@@ -7,6 +7,7 @@ namespace Mission09_jhuish88.Models.ViewModels
 {
     public class PageInfo
     {
+        // ESTABLISH PAGE INFO VARIABLES
         public int TotalNumBooks { get; set; }
         public int BooksPerPage { get; set; }
         public int CurrentPage { get; set; }

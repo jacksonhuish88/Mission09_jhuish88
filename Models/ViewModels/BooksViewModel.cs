@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_jhuish88.Models.ViewModels
 {
+    // CALLS TWO THINGS SO THAT THEY BOTH CAN BE RETURNED IN THE HOMECONTROLLER
     public class BooksViewModel
     {
         public IQueryable<Book> Books { get; set; }

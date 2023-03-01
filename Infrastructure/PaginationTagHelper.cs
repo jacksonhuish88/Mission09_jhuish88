@@ -38,6 +38,7 @@ namespace Mission09_jhuish88.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
+            // CREATE DIVS AND SUBDIVS FOR THE AMOUNT OF BOOKS DIVIDED BY BOOKS/PER/PAGE
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");

@@ -12,20 +12,25 @@ namespace Mission09_jhuish88.Controllers
     {
         private IBookRepository repo;
 
+        // CREATE BOOK REPO
         public HomeController (IBookRepository temp)
         {
             repo = temp;
         }
+
+        // INDEX PAGE CALL
         public IActionResult Index(int pageNum = 1)
         {
             int pageSize = 10;
             var x = new BooksViewModel
             {
+                // CALL AND ORDER BOOK REPO
                 Books = repo.Books
                 .OrderBy(b => b.Title)
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize),
 
+                // ESTABLISH BOOK PAGE INFO 
                 PageInfo = new PageInfo
                 {
                     TotalNumBooks = repo.Books.Count(),
