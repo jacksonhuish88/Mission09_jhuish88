@@ -34,9 +34,13 @@ namespace Mission09_jhuish88
             });
 
             services.AddScoped<IBookRepository, EFBookRepository>();
+            services.AddScoped<IOrderRepository, EFOrderRepository>();
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,12 +65,12 @@ namespace Mission09_jhuish88
 
                 endpoints.MapControllerRoute(
                     name: "Paging",
-                    pattern: "{pageNum}",
+                    pattern: "Page{pageNum}",
                     defaults: new { Controller = "Home", action = "Index", pageNum = 1 });
 
                 endpoints.MapControllerRoute(
                     name: "Category",
-                    pattern: "{bookCategory}",
+                    pattern: "bookCategory{bookCategory}",
                     defaults: new { Controller = "Home", action = "Index" , pageNum = 1}
                     );
 
